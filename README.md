@@ -1,6 +1,6 @@
 # Mohit Chauhan — Developer Portfolio
 
-A fast, accessible, and responsive personal developer portfolio website for Mohit Chauhan, a Full-Stack Developer and Computer Science undergraduate at Lovely Professional University. Built following an editorial monograph design aesthetic in light (`#fcf9f8` canvas) and dark (`#131316` canvas) modes, the site highlights selected production full-stack and AI-driven projects, technical skills, academic and training background, and verified contact channels with zero layout shift and static pre-rendering.
+A fast, accessible, and responsive personal developer portfolio website for Mohit Chauhan, a Full-Stack Developer and Computer Science undergraduate at Lovely Professional University. Built following an editorial monograph design aesthetic in light (`#f5f0e8` beige canvas) and dark (`#131316` canvas) modes, the site highlights selected production full-stack and AI-driven projects, technical skills, academic and training background, and verified contact channels with zero layout shift and static pre-rendering.
 
 ---
 

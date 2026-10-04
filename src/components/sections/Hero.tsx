@@ -69,13 +69,13 @@ export function Hero({ id }: SectionProps) {
 
   const rightContent = profile.avatar ? (
     <>
-      {/* Mobile avatar (< 1024px): 64px */}
-      <div className="block lg:hidden">
-        <Avatar image={profile.avatar} size={64} />
+      {/* Mobile avatar (< 1024px): 180px, centered */}
+      <div className="flex justify-center lg:hidden">
+        <Avatar image={profile.avatar} size={180} />
       </div>
-      {/* Desktop enlarged avatar (>= 1024px): ~220px */}
-      <div className="hidden lg:block">
-        <Avatar image={profile.avatar} size={220} />
+      {/* Desktop enlarged avatar (>= 1024px): 360px */}
+      <div className="hidden lg:flex lg:justify-center">
+        <Avatar image={profile.avatar} size={360} />
       </div>
     </>
   ) : null;

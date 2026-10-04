@@ -23,9 +23,13 @@ export function HeroMotion({ leftContent, rightContent }: HeroMotionProps) {
 
   if (!mounted) {
     return (
-      <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
-        <div className="flex flex-col lg:col-span-8">{leftContent}</div>
-        <div className="mb-8 flex justify-start lg:col-span-4 lg:mb-0 lg:justify-end">{rightContent}</div>
+      <div className="flex flex-col items-center gap-6 lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
+        {/* Avatar first in DOM → shows on top on mobile */}
+        <div className="flex justify-center lg:col-span-4 lg:order-2">{rightContent}</div>
+        {/* Text second in DOM → shows below avatar on mobile, left on desktop */}
+        <div className="w-full lg:col-span-8 lg:order-1">
+          <div className="flex flex-col">{leftContent}</div>
+        </div>
       </div>
     );
   }
@@ -55,19 +59,18 @@ export function HeroMotion({ leftContent, rightContent }: HeroMotionProps) {
   return (
     <LazyMotion features={domAnimation}>
       <m.div
-        className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-12"
+        className="flex flex-col items-center gap-6 lg:grid lg:grid-cols-12 lg:items-center lg:gap-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <m.div className="flex flex-col lg:col-span-8" variants={itemVariants}>
-          {leftContent}
-        </m.div>
-        <m.div
-          className="mb-8 flex justify-start lg:col-span-4 lg:mb-0 lg:justify-end"
-          variants={itemVariants}
-        >
+        {/* Avatar first in DOM → shows on top on mobile */}
+        <m.div className="flex justify-center lg:col-span-4 lg:order-2" variants={itemVariants}>
           {rightContent}
+        </m.div>
+        {/* Text second in DOM → shows below avatar on mobile, left on desktop */}
+        <m.div className="w-full lg:col-span-8 lg:order-1" variants={itemVariants}>
+          <div className="flex flex-col">{leftContent}</div>
         </m.div>
       </m.div>
     </LazyMotion>

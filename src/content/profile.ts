@@ -9,7 +9,7 @@ export const profile: Profile = {
   avatar: {
     src: "/images/mohit-chauhan.jpg",
     alt: "Portrait of Mohit Chauhan",
-    objectPosition: "center 20%",
+    objectPosition: "center 10%",
   },
   about: [
     "I am a Computer Science undergraduate at Lovely Professional University (CGPA 9.01) with a deep interest in turning practical, complex challenges across sustainability, healthcare, and education into resilient full-stack web applications.",
