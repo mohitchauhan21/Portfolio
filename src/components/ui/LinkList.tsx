@@ -26,7 +26,7 @@ export function LinkList({ links, ariaLabelPrefix }: LinkListProps) {
             aria-label={
               ariaLabelPrefix ? `${link.label}: ${ariaLabelPrefix}` : undefined
             }
-            className="text-accent text-sm"
+            className="inline-flex min-h-[44px] items-center py-2 text-sm text-accent sm:min-h-0 sm:py-0"
           >
             {link.label}
           </TextLink>

@@ -44,7 +44,7 @@ export function Hero({ id }: SectionProps) {
           <p className="text-muted font-sans text-sm leading-5">{label}</p>
           <h1
             id="hero-heading"
-            className="text-foreground font-serif text-[40px] leading-[1.05] font-normal tracking-[-0.015em] sm:text-[56px]"
+            className="font-serif text-[40px] font-normal leading-[1.05] tracking-[-0.015em] text-foreground md:text-[56px]"
           >
             {profile.name}
           </h1>
@@ -71,7 +71,7 @@ export function Hero({ id }: SectionProps) {
               key={link.id}
               href={link.href}
               newTab={link.external}
-              className="text-foreground font-sans text-sm"
+              className="inline-flex min-h-[44px] items-center py-2 font-sans text-sm text-foreground sm:min-h-0 sm:py-0"
             >
               {link.label}
             </TextLink>

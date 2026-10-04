@@ -108,3 +108,22 @@
 - `src/app/page.tsx` — wired sections via registry, JSON-LD Person schema (name, role, site URL, avatar, socials)
 - ✅ `npm run lint` (0 warnings), `npm run typecheck` (0 errors), `npm run build` (static build `○ /`) clean
 
+---
+
+## ✅ Phase 5: Responsive and Dark-Theme Pass — COMPLETE
+
+**Git commit:** `phase 5: responsive and dark-theme pass`
+
+- Navbar: responsive breakpoint at 768px (Wordmark + Menu button on mobile, full link row + theme toggle on desktop)
+- Hero avatar: responsive placement and size (56px above label on < 640px, 64px top-right on ≥ 640px)
+- Hero name: responsive font scale (40px on < 768px, 56px on ≥ 768px)
+- Project rows: responsive layout (single column < 768px, two-column ≥ 768px)
+- Skill groups: responsive layout (single column < 640px, two-column ≥ 640px)
+- Background rows: responsive layout (single column < 640px, two-column ≥ 640px)
+- Contact links: responsive spacing (stacked 12px gap < 640px, row 48px gap ≥ 640px)
+- Touch targets: minimum 44×44px touch targets on mobile for menu buttons, theme toggle, and standalone links
+- Dark mode: full token coverage via CSS variables in light (`#fcf9f8` canvas) and dark (`#131316` canvas)
+- Horizontal overflow: zero horizontal scrollbar down to 320px width (`max-w-[800px]`, `px-6 sm:px-8`, `break-all`)
+- ✅ `npm run lint` (0 warnings), `npm run typecheck` (0 errors), `npm run build` (static build `○ /`) clean
+
+

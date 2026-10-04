@@ -47,7 +47,7 @@ export function Contact({ id, title = "Get in touch" }: SectionProps) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted hover:text-foreground focus-visible:ring-accent font-sans text-sm leading-5 transition-colors focus:outline-none focus-visible:ring-2"
+              className="inline-flex min-h-[44px] items-center py-2 font-sans text-sm leading-5 text-muted transition-colors hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:min-h-0 sm:py-0"
             >
               {link.text}
             </a>
