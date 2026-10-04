@@ -21,19 +21,48 @@ A fast, accessible, and responsive personal developer portfolio website for Mohi
 - **Node.js:** `v20.0.0` or higher (tested on `v24.21.0`)
 - **Package Manager:** `npm` `10.0.0` or higher (tested on `11.19.0`)
 
+## Getting Started & Running on Localhost
+
+Follow these simple steps to run the portfolio locally on your machine:
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/mohitchauhan21/Portfolio.git
+cd Portfolio/mohit-portfolio
+```
+
+### 2. Install dependencies
+Ensure you have Node.js 20+ installed, then run:
+```bash
+npm install
+```
+
+### 3. Start the development server
+```bash
+npm run dev
+```
+Open your browser and navigate to **[http://localhost:3000](http://localhost:3000)**. The page will reload automatically as you edit files in `src/content/` or `src/components/`.
+
+### 4. Running a production build locally (Recommended verification)
+To test the fully optimized static build locally exactly as it will run in production:
+```bash
+npm run build
+npm start
+```
+Then visit **[http://localhost:3000](http://localhost:3000)**.
+
 ---
 
-## Commands
+## Available Commands & Scripts
 
-```bash
-npm install        # Install project dependencies
-npm run dev        # Start the local development server at http://localhost:3000
-npm run build      # Compile an optimized static production build in .next/
-npm start          # Run the pre-built static production server at http://localhost:3000
-npm run lint       # Run ESLint across all files with --max-warnings 0
-npm run typecheck  # Run TypeScript compiler type-checking without emitting files
-npm run format     # Format all code and docs using Prettier
-```
+| Command | Description |
+|---|---|
+| `npm run dev` | Starts the Turbopack local development server at `http://localhost:3000` |
+| `npm run build` | Compiles optimized static production pages with static export and content validation |
+| `npm start` | Starts the production server hosting the compiled build |
+| `npm run lint` | Runs ESLint across all files with strict `--max-warnings 0` |
+| `npm run typecheck` | Validates TypeScript types across the entire project (`tsc --noEmit`) |
+| `npm run format` | Formats all source files, documentation, and configs with Prettier |
 
 ---
 

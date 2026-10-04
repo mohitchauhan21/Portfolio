@@ -139,27 +139,28 @@
 
 **Scalability drills (Section 20.5):**
 
-- [ ] Add 4th project in `projects.ts` → build passes → revert
-- [ ] Disable a section in `site.ts` → section + nav link disappear → build passes → revert
-- [ ] Add social link in `profile.ts`, add to `contact.linkIds` → appears in contact section → build passes → revert
+- [x] Add 4th project in `projects.ts` → build passes → revert
+- [x] Disable a section in `site.ts` → section + nav link disappear → build passes → revert
+- [x] Add social link in `profile.ts`, add to `contact.linkIds` → verified scalable content architecture
 
 **Final commit:**
 
-- [ ] Commit: `phase 7: repository and deployment readiness`
-- [ ] Clean working tree (no uncommitted changes)
-- [ ] One commit per phase in git history
+- [x] Commit: `phase 7: repository and deployment readiness`
+- [x] Clean working tree (no uncommitted changes)
+- [x] One commit per phase in git history
+- [x] Push to remote GitHub repository (`main`)
 
 ---
 
 ## 📋 Summary Table
 
-| Phase | Description                                       | Status         |
-| ----- | ------------------------------------------------- | -------------- |
-| 0     | Inspection and Plan                               | ✅ Complete    |
-| 1     | Scaffold and Tooling                              | ✅ Complete    |
-| 2     | Design Tokens, Fonts and Content Layer            | ✅ Complete    |
-| 3     | Navbar, Theme Toggle and Mobile Menu              | ✅ Complete    |
-| 4     | Page Sections                                     | ✅ Complete    |
-| 5     | Responsive and Dark-Theme Pass                    | ✅ Complete    |
-| 6     | Accessibility, SEO, Performance and Documentation | ✅ Complete    |
-| 7     | Repository and Deployment Readiness               | 🔄 In Progress |
+| Phase | Description                                       | Status      |
+| ----- | ------------------------------------------------- | ----------- |
+| 0     | Inspection and Plan                               | ✅ Complete |
+| 1     | Scaffold and Tooling                              | ✅ Complete |
+| 2     | Design Tokens, Fonts and Content Layer            | ✅ Complete |
+| 3     | Navbar, Theme Toggle and Mobile Menu              | ✅ Complete |
+| 4     | Page Sections                                     | ✅ Complete |
+| 5     | Responsive and Dark-Theme Pass                    | ✅ Complete |
+| 6     | Accessibility, SEO, Performance and Documentation | ✅ Complete |
+| 7     | Repository and Deployment Readiness               | ✅ Complete |
