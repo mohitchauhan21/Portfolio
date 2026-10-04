@@ -26,8 +26,8 @@ export function TextLink({
       rel={opensNewTab ? "noopener noreferrer" : undefined}
       aria-label={ariaLabel}
       className={cn(
-        "text-foreground decoration-line underline decoration-1 underline-offset-[4px]",
-        "hover:text-accent hover:decoration-accent transition-colors",
+        "text-foreground text-link-animated",
+        "hover:text-accent transition-colors duration-200",
         "focus-visible:ring-accent focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-offset-2",
         className
       )}

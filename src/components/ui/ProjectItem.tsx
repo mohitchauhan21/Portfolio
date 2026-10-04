@@ -8,7 +8,7 @@ interface ProjectItemProps {
 
 export function ProjectItem({ project }: ProjectItemProps) {
   return (
-    <article className="border-line flex flex-col border-b py-10 last:border-b-0 md:flex-row md:items-start md:gap-7">
+    <article className="group border-line flex flex-col border-b py-10 last:border-b-0 md:flex-row md:items-start md:gap-7">
       {/* Date column */}
       <span className="text-muted mb-2 shrink-0 pt-0.5 font-sans text-sm leading-5 md:mb-0 md:w-28">
         {project.dateLabel}
@@ -16,9 +16,19 @@ export function ProjectItem({ project }: ProjectItemProps) {
 
       {/* Content column */}
       <div className="min-w-0 flex-1 space-y-3">
-        {/* Title */}
-        <h3 className="text-foreground font-serif text-[20px] leading-[28px] font-normal tracking-[-0.005em] md:text-[22px] md:leading-[30px]">
-          {project.title}
+        {/* Title: moves 4px to right, turns accent, arrow fades in */}
+        <h3 className="text-foreground inline-flex items-center gap-2 font-serif text-[20px] leading-[28px] font-normal tracking-[-0.005em] transition-all duration-200 ease-out group-hover:translate-x-1 group-hover:text-accent group-focus-within:translate-x-1 group-focus-within:text-accent md:text-[22px] md:leading-[30px]">
+          <span>{project.title}</span>
+          <svg
+            aria-hidden="true"
+            className="h-4 w-4 shrink-0 -translate-x-1 opacity-0 transition-all duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:translate-x-0 group-focus-within:opacity-100 text-accent"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
         </h3>
 
         {/* Description */}

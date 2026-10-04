@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { site, type NavItem } from "@/content";
 import { ThemeToggle } from "./ThemeToggle";
 import { useLockBodyScroll } from "@/hooks/useLockBodyScroll";
+import { cn } from "@/lib/cn";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -87,7 +88,20 @@ export function MobileMenu({
     };
   }, [isOpen, onClose, triggerRef]);
 
-  if (!isOpen) return null;
+  // Keep element in DOM during 150ms fade-out
+  const [shouldRender, setShouldRender] = useState(isOpen);
+
+  useEffect(() => {
+    if (isOpen) {
+      const id = setTimeout(() => setShouldRender(true), 0);
+      return () => clearTimeout(id);
+    } else {
+      const timer = setTimeout(() => setShouldRender(false), 150);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
+  if (!shouldRender) return null;
 
   return (
     <div
@@ -96,7 +110,10 @@ export function MobileMenu({
       role="dialog"
       aria-modal="true"
       aria-label="Mobile Navigation"
-      className="bg-background fixed inset-x-0 top-14 bottom-0 z-40 flex flex-col justify-between px-6 py-10 md:hidden"
+      className={cn(
+        "bg-background fixed inset-x-0 top-14 bottom-0 z-40 flex flex-col justify-between px-6 py-10 transition-opacity duration-200 md:hidden",
+        isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+      )}
     >
       <nav className="flex flex-col space-y-5" aria-label="Mobile">
         {items.map((item, index) => {
@@ -118,7 +135,12 @@ export function MobileMenu({
               }}
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
-              className="text-foreground hover:text-accent focus-visible:ring-accent font-serif text-[32px] transition-colors focus:outline-none focus-visible:ring-2"
+              className="text-foreground hover:text-accent focus-visible:ring-accent font-serif text-[32px] transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2"
+              style={{
+                transitionDelay: `${index * 50}ms`,
+                transform: isOpen ? "translateY(0)" : "translateY(12px)",
+                opacity: isOpen ? 1 : 0,
+              }}
             >
               {item.label}
             </a>

@@ -41,6 +41,53 @@
   padding-right: clamp(24px, 5vw, 80px);
 }
 
+/* TextLink animated underline */
+.text-link-animated {
+  position: relative;
+  text-decoration: none;
+}
+.text-link-animated::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--line);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1), background-color 200ms ease;
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+.text-link-animated:hover::after,
+.text-link-animated:focus::after,
+.text-link-animated:focus-visible::after {
+  background-color: var(--accent);
+  transform: scaleX(1);
+}
+
+/* Theme toggle transition class applied during toggle */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .text-link-animated::after {
+    transform: scaleX(1) !important;
+    transition: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
