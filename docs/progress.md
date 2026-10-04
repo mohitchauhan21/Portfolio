@@ -126,4 +126,28 @@
 - Horizontal overflow: zero horizontal scrollbar down to 320px width (`max-w-[800px]`, `px-6 sm:px-8`, `break-all`)
 - ✅ `npm run lint` (0 warnings), `npm run typecheck` (0 errors), `npm run build` (static build `○ /`) clean
 
+---
+
+## ✅ Phase 6: Accessibility, SEO, Performance and Documentation — COMPLETE
+
+**Git commit:** `phase 6: accessibility, seo, performance and documentation`
+
+- Accessibility: WCAG 2.2 AA compliance verified across all landmarks, headings, text minimums, contrast ratios, and keyboard navigation
+- Favicon: `src/app/icon.tsx` generating a 32x32 MC icon via `next/og`
+- Social Preview Image: `src/app/opengraph-image.tsx` generating a 1200x630 card via `next/og`
+- Sitemap: `src/app/sitemap.ts` with root URL and dynamic current timestamp
+- Crawlers: `src/app/robots.ts` allowing indexation and referencing sitemap.xml
+- 404 Page: `src/app/not-found.tsx` with themed message and return navigation
+- Documentation:
+  - `README.md` containing description, stack versions, requirements, commands, project tree, editing guide, env var, Vercel deployment steps, and design reference note
+  - `docs/CUSTOMIZING.md` with everyday change recipes, 5 copy-pasteable before/after snippets, 6-step new section procedure, validation troubleshooting table, and pre-deploy checklist
+- Snippet verification drills:
+  - ✅ Drill 1 (Add a project): typecheck + build passed, reverted
+  - ✅ Drill 2 (Hide a project): typecheck + build passed, reverted
+  - ✅ Drill 3 (Add a social link): typecheck + build passed, reverted
+  - ✅ Drill 4 (Add a certificate): typecheck + build passed, reverted
+  - ✅ Drill 5 (Add a background group): typecheck + build passed, reverted
+- ✅ `npm run lint` (0 warnings), `npm run typecheck` (0 errors), `npm run build` (static build `○ /`) clean
+
+
 
