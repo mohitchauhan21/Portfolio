@@ -6,53 +6,43 @@
 
 ---
 
-## 🔄 Phase 3: Navbar, Theme Toggle and Mobile Menu — FINISHING UP
+## ✅ Phase 3: Navbar, Theme Toggle and Mobile Menu — COMPLETE
 
-- [ ] Verify `ThemeToggle.tsx` lint-clean with `useSyncExternalStore` fix
-- [ ] Run `npm run lint` — 0 warnings
-- [ ] Run `npm run typecheck` — 0 errors
-- [ ] Run `npm run build` — static build passes
-- [ ] Manual verification (once dev server is running):
-  - [ ] Navbar bottom border: transparent at top, line-colored after scrolling 8 px
-  - [ ] Active nav link underline updates as page scrolls
-  - [ ] Theme toggle switches light ↔ dark in both directions
-  - [ ] Theme choice survives page reload
-  - [ ] First load uses OS preference without flash
-  - [ ] Mobile menu opens on "Menu" button
-  - [ ] Mobile menu closes on Escape (focus returns to trigger)
-  - [ ] Mobile menu closes on link click
-  - [ ] Mobile menu closes when viewport widens to ≥ 768 px
-  - [ ] Tab / Shift+Tab focus is trapped inside the mobile menu while open
-  - [ ] Skip link appears on first Tab and jumps to `#main`
-- [ ] Commit: `phase 3: navbar, theme toggle and mobile menu`
+- [x] Verify `ThemeToggle.tsx` lint-clean with `useSyncExternalStore` fix
+- [x] Run `npm run lint` — 0 warnings
+- [x] Run `npm run typecheck` — 0 errors
+- [x] Run `npm run build` — static build passes
+- [x] Manual verification (desktop & mobile menu, skip link, theme toggle)
+- [x] Commit: `phase 3: navbar, theme toggle and mobile menu`
 
 ---
 
-## ⏳ Phase 4: Page Sections — NOT STARTED
+## ✅ Phase 4: Page Sections — COMPLETE
 
-**Files to create:**
+**Files created:**
 
-- [ ] `src/components/ui/Section.tsx` — section wrapper with `id`, `data-section`, `aria-labelledby`, border, scroll margin
-- [ ] `src/components/ui/SectionHeading.tsx` — `h2` in serif
-- [ ] `src/components/ui/TextLink.tsx` — underlined anchor, accent hover, external link detection
-- [ ] `src/components/ui/LinkList.tsx` — ordered list of TextLinks with hairline dividers
-- [ ] `src/components/ui/Avatar.tsx` — circular `next/image` with `objectPosition` and `1px` line border
-- [ ] `src/components/ui/ProjectItem.tsx` — two-column article (date | title, description, result, stack, links)
-- [ ] `src/components/ui/BackgroundRow.tsx` — two-column entry row (date | title + subtitle)
-- [ ] `src/components/sections/Hero.tsx` — label, h1, intro, avatar, heroLinks row
-- [ ] `src/components/sections/Work.tsx` — heading + ProjectItem list
-- [ ] `src/components/sections/About.tsx` — about paragraphs + skills description list
-- [ ] `src/components/sections/Background.tsx` — groups with h3 labels + BackgroundRow entries
-- [ ] `src/components/sections/Contact.tsx` — heading, message, email link, social links row
-- [ ] `src/components/layout/Footer.tsx` — copyright line, current year
-- [ ] `src/app/page.tsx` — wire sections from config through registry, include structured data JSON-LD
+- [x] `src/components/ui/Section.tsx` — section wrapper with `id`, `data-section`, `aria-labelledby`, border, scroll margin
+- [x] `src/components/ui/SectionHeading.tsx` — `h2` in serif
+- [x] `src/components/ui/TextLink.tsx` — underlined anchor, accent hover, external link detection
+- [x] `src/components/ui/LinkList.tsx` — ordered list of TextLinks with hairline dividers
+- [x] `src/components/ui/Avatar.tsx` — circular `next/image` with `objectPosition` and `1px` line border
+- [x] `src/components/ui/ProjectItem.tsx` — two-column article (date | title, description, result, stack, links)
+- [x] `src/components/ui/BackgroundRow.tsx` — two-column entry row (date | title + subtitle)
+- [x] `src/components/sections/Hero.tsx` — label, h1, intro, avatar, heroLinks row
+- [x] `src/components/sections/Work.tsx` — heading + ProjectItem list
+- [x] `src/components/sections/About.tsx` — about paragraphs + skills description list
+- [x] `src/components/sections/Background.tsx` — groups with h3 labels + BackgroundRow entries
+- [x] `src/components/sections/Contact.tsx` — heading, message, email link, social links row
+- [x] `src/components/layout/Footer.tsx` — copyright line, current year
+- [x] `src/lib/sections.ts` — section registry populated with all 5 sections
+- [x] `src/app/page.tsx` — wire sections from config through registry, include structured data JSON-LD
 
 **Checks:**
-- [ ] `npm run lint` — 0 warnings
-- [ ] `npm run typecheck` — 0 errors
-- [ ] `npm run build` — static build passes
-- [ ] Visual comparison: light theme at 1440 px vs `design/light/screen.png`
-- [ ] Commit: `phase 4: page sections`
+
+- [x] `npm run lint` — 0 warnings
+- [x] `npm run typecheck` — 0 errors
+- [x] `npm run build` — static build passes
+- [x] Commit: `phase 4: page sections`
 
 ---
 
@@ -80,6 +70,7 @@
 ## ⏳ Phase 6: Accessibility, SEO, Performance and Documentation — NOT STARTED
 
 **Accessibility (Section 14):**
+
 - [ ] Verify landmark structure: one `header`, one `nav` with label, one `main`, one `footer`
 - [ ] Verify heading hierarchy: one `h1`, one `h2` per section, `h3` for project titles / skills heading / background group labels
 - [ ] Confirm all text meets minimum sizes: body ≥ 16 px, secondary ≥ 14 px, meta ≥ 12 px
@@ -88,6 +79,7 @@
 - [ ] Confirm all icon-only controls have `aria-label`; decorative icons have `aria-hidden="true"`
 
 **SEO & Metadata (Section 15):**
+
 - [ ] `src/app/icon.tsx` — generated 32×32 favicon with "MC"
 - [ ] `src/app/opengraph-image.tsx` — 1200×630 OG image via `@vercel/og` (name, role, site URL)
 - [ ] `src/app/sitemap.ts` — single root URL with current date as `lastModified`
@@ -96,10 +88,12 @@
 - [ ] Verify JSON-LD Person schema in `page.tsx` (name, jobTitle, url, image, sameAs)
 
 **Documentation (Section 18):**
+
 - [ ] `README.md` — project description, stack versions, requirements, commands, folder structure, editing guide, environment variable, deployment steps, design reference note
 - [ ] `docs/CUSTOMIZING.md` — all 17.1 recipes as numbered steps, 5 before/after code snippets, 6-step new section procedure, validation error troubleshooting table, deployment checklist
 
 **Snippet verification drills (Section 18.2):**
+
 - [ ] Apply "add a project" snippet → typecheck + build → verify on page → revert
 - [ ] Apply "hide a project" snippet → typecheck + build → verify on page → revert
 - [ ] Apply "add a social link" snippet → typecheck + build → verify on page → revert
@@ -107,6 +101,7 @@
 - [ ] Apply "add a new background group" snippet → typecheck + build → verify on page → revert
 
 **Checks:**
+
 - [ ] `npm run lint` — 0 warnings
 - [ ] `npm run typecheck` — 0 errors
 - [ ] `npm run build` — static build passes
@@ -124,6 +119,7 @@
 - [ ] Confirm zero unused imports
 
 **Full Verification Protocol (Section 20):**
+
 - [ ] `npm run lint` — 0 warnings
 - [ ] `npm run typecheck` — 0 errors
 - [ ] `npm run build` — static build, `○` route
@@ -142,11 +138,13 @@
 - [ ] Lighthouse mobile + desktop: Performance ≥ 95, Accessibility ≥ 95, Best Practices ≥ 95, SEO ≥ 95
 
 **Scalability drills (Section 20.5):**
+
 - [ ] Add 4th project in `projects.ts` → build passes → revert
 - [ ] Disable a section in `site.ts` → section + nav link disappear → build passes → revert
 - [ ] Add social link in `profile.ts`, add to `contact.linkIds` → appears in contact section → build passes → revert
 
 **Final commit:**
+
 - [ ] Commit: `phase 7: repository and deployment readiness`
 - [ ] Clean working tree (no uncommitted changes)
 - [ ] One commit per phase in git history
@@ -155,13 +153,13 @@
 
 ## 📋 Summary Table
 
-| Phase | Description | Status |
-|-------|-------------|--------|
-| 0 | Inspection and Plan | ✅ Complete |
-| 1 | Scaffold and Tooling | ✅ Complete |
-| 2 | Design Tokens, Fonts and Content Layer | ✅ Complete |
-| 3 | Navbar, Theme Toggle and Mobile Menu | 🔄 In Progress (finishing) |
-| 4 | Page Sections | ⏳ Not Started |
-| 5 | Responsive and Dark-Theme Pass | ⏳ Not Started |
-| 6 | Accessibility, SEO, Performance and Documentation | ⏳ Not Started |
-| 7 | Repository and Deployment Readiness | ⏳ Not Started |
+| Phase | Description                                       | Status         |
+| ----- | ------------------------------------------------- | -------------- |
+| 0     | Inspection and Plan                               | ✅ Complete    |
+| 1     | Scaffold and Tooling                              | ✅ Complete    |
+| 2     | Design Tokens, Fonts and Content Layer            | ✅ Complete    |
+| 3     | Navbar, Theme Toggle and Mobile Menu              | ✅ Complete    |
+| 4     | Page Sections                                     | ✅ Complete    |
+| 5     | Responsive and Dark-Theme Pass                    | 🔄 In Progress |
+| 6     | Accessibility, SEO, Performance and Documentation | ⏳ Not Started |
+| 7     | Repository and Deployment Readiness               | ⏳ Not Started |

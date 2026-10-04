@@ -12,7 +12,12 @@ interface MobileMenuProps {
   items: NavItem[];
 }
 
-export function MobileMenu({ isOpen, onClose, triggerRef, items }: MobileMenuProps) {
+export function MobileMenu({
+  isOpen,
+  onClose,
+  triggerRef,
+  items,
+}: MobileMenuProps) {
   useLockBodyScroll(isOpen);
   const menuRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
@@ -91,7 +96,7 @@ export function MobileMenu({ isOpen, onClose, triggerRef, items }: MobileMenuPro
       role="dialog"
       aria-modal="true"
       aria-label="Mobile Navigation"
-      className="fixed inset-x-0 bottom-0 top-14 z-40 flex flex-col justify-between bg-background px-6 py-10 md:hidden"
+      className="bg-background fixed inset-x-0 top-14 bottom-0 z-40 flex flex-col justify-between px-6 py-10 md:hidden"
     >
       <nav className="flex flex-col space-y-5" aria-label="Mobile">
         {items.map((item, index) => {
@@ -113,7 +118,7 @@ export function MobileMenu({ isOpen, onClose, triggerRef, items }: MobileMenuPro
               }}
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
-              className="font-serif text-[32px] text-foreground transition-colors hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="text-foreground hover:text-accent focus-visible:ring-accent font-serif text-[32px] transition-colors focus:outline-none focus-visible:ring-2"
             >
               {item.label}
             </a>
@@ -121,8 +126,8 @@ export function MobileMenu({ isOpen, onClose, triggerRef, items }: MobileMenuPro
         })}
       </nav>
 
-      <div className="flex items-center justify-between border-t border-line pt-6">
-        <span className="text-sm text-muted">{site.ui.themeToggle}</span>
+      <div className="border-line flex items-center justify-between border-t pt-6">
+        <span className="text-muted text-sm">{site.ui.themeToggle}</span>
         <ThemeToggle />
       </div>
     </div>

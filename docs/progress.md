@@ -63,6 +63,7 @@
 - `src/lib/sections.ts` — Section registry
 
 **Validation drills confirmed:**
+
 - ✅ Duplicate id → clear build error
 - ✅ Missing asset path → clear build error
 - ✅ Unknown id in heroLinks → clear build error
@@ -70,17 +71,40 @@
 
 ---
 
-## 🔄 Phase 3: Navbar, Theme Toggle and Mobile Menu — IN PROGRESS
+## ✅ Phase 3: Navbar, Theme Toggle and Mobile Menu — COMPLETE
 
-**Files completed:**
-- ✅ `src/hooks/useScrolled.ts`
-- ✅ `src/hooks/useScrollSpy.ts`
-- ✅ `src/hooks/useLockBodyScroll.ts`
-- ✅ `src/components/icons/SunIcon.tsx`
-- ✅ `src/components/icons/MoonIcon.tsx`
-- ✅ `src/components/layout/ThemeToggle.tsx` (updated to `useSyncExternalStore`)
-- ✅ `src/components/layout/MobileMenu.tsx`
-- ✅ `src/components/layout/Navbar.tsx`
-- ✅ `src/app/layout.tsx` — Navbar wired in
+**Git commit:** `phase 3: navbar, theme toggle and mobile menu`
 
-**Remaining:** lint + typecheck + build verification, commit
+- `src/hooks/useScrolled.ts` — 8px threshold detection
+- `src/hooks/useScrollSpy.ts` — IntersectionObserver active section tracking
+- `src/hooks/useLockBodyScroll.ts` — overflow hidden when mobile menu open
+- `src/components/icons/SunIcon.tsx` — inline SVG sun icon
+- `src/components/icons/MoonIcon.tsx` — inline SVG moon icon
+- `src/components/layout/ThemeToggle.tsx` — hydration-safe toggle with `useSyncExternalStore`
+- `src/components/layout/MobileMenu.tsx` — accessible drawer with focus trap, Escape, Tab wrap
+- `src/components/layout/Navbar.tsx` — responsive header, wordmark, desktop nav, active indicator
+- `src/app/layout.tsx` — Navbar integrated
+
+---
+
+## ✅ Phase 4: Page Sections — COMPLETE
+
+**Git commit:** `phase 4: page sections`
+
+- `src/components/ui/Section.tsx` — section wrapper with id, scroll-margin, hero padding, border-line
+- `src/components/ui/SectionHeading.tsx` — serif h2 with responsive sizing (28px mobile, 36px desktop)
+- `src/components/ui/TextLink.tsx` — underlined link with accent hover and external link handling
+- `src/components/ui/LinkList.tsx` — hairline-divided link list with accessible labels
+- `src/components/ui/Avatar.tsx` — circular avatar with next/image, border, and object-position
+- `src/components/ui/ProjectItem.tsx` — two-column article (date | title, description, result, stack, links)
+- `src/components/ui/BackgroundRow.tsx` — two-column entry row (date | title + subtitle)
+- `src/components/sections/Hero.tsx` — role/location label, h1, intro, responsive avatar (56px mobile / 64px desktop), heroLinks
+- `src/components/sections/Work.tsx` — heading + ProjectItem list (all visible projects)
+- `src/components/sections/About.tsx` — paragraphs + skills description list (dl/dt/dd)
+- `src/components/sections/Background.tsx` — group labels + BackgroundRow entries (Education, Training, Certificates, Achievements)
+- `src/components/sections/Contact.tsx` — message, large serif email link, responsive social links row
+- `src/components/layout/Footer.tsx` — copyright line with dynamic year, no border
+- `src/lib/sections.ts` — populated sectionRegistry with all 5 section components
+- `src/app/page.tsx` — wired sections via registry, JSON-LD Person schema (name, role, site URL, avatar, socials)
+- ✅ `npm run lint` (0 warnings), `npm run typecheck` (0 errors), `npm run build` (static build `○ /`) clean
+

@@ -9,7 +9,14 @@ export const projects: Project[] = [
       "Full-stack platform that helps companies track, analyze and reduce their carbon footprint, with role-based access and real-time dashboards.",
     result:
       "Automated CO₂e calculations across 400+ logs, cutting manual data-processing effort by about 45%.",
-    stack: ["React 19", "TypeScript", "Express.js", "MongoDB", "JWT", "Recharts"],
+    stack: [
+      "React 19",
+      "TypeScript",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Recharts",
+    ],
     links: [
       {
         label: "GitHub",
@@ -53,7 +60,14 @@ export const projects: Project[] = [
     description:
       "Role-based platform connecting patients, caregivers, doctors and admins, with real-time medication alerts and adherence risk scoring.",
     result: "Flags patients below 60% adherence across 3 risk tiers.",
-    stack: ["Node.js", "Express.js", "MongoDB", "JWT", "Chart.js", "Tailwind CSS"],
+    stack: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Chart.js",
+      "Tailwind CSS",
+    ],
     links: [
       {
         label: "GitHub",

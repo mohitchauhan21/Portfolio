@@ -42,15 +42,15 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 w-full bg-background transition-colors duration-150",
-          isScrolled ? "border-b border-line" : "border-b border-transparent"
+          "bg-background sticky top-0 z-50 w-full transition-colors duration-150",
+          isScrolled ? "border-line border-b" : "border-b border-transparent"
         )}
       >
-        <div className="mx-auto flex h-14 md:h-16 max-w-[800px] items-center justify-between px-6 sm:px-8">
+        <div className="mx-auto flex h-14 max-w-[800px] items-center justify-between px-6 sm:px-8 md:h-16">
           {/* Wordmark */}
           <a
             href="#main"
-            className="font-serif text-lg font-medium text-foreground transition-colors hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="text-foreground hover:text-accent focus-visible:ring-accent font-serif text-lg font-medium transition-colors focus:outline-none focus-visible:ring-2"
           >
             {site.name}
           </a>
@@ -67,9 +67,9 @@ export function Navbar() {
                       href={`#${item.target.id}`}
                       aria-current={isActive ? "location" : undefined}
                       className={cn(
-                        "text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+                        "focus-visible:ring-accent text-sm transition-colors focus:outline-none focus-visible:ring-2",
                         isActive
-                          ? "text-foreground underline decoration-1 underline-offset-[6px] decoration-accent"
+                          ? "text-foreground decoration-accent underline decoration-1 underline-offset-[6px]"
                           : "text-muted hover:text-foreground"
                       )}
                     >
@@ -86,7 +86,7 @@ export function Navbar() {
                     href={item.target.href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
-                    className="text-sm text-muted transition-colors hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    className="text-muted hover:text-foreground focus-visible:ring-accent text-sm transition-colors focus:outline-none focus-visible:ring-2"
                   >
                     {item.label}
                   </a>
@@ -103,7 +103,7 @@ export function Navbar() {
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="flex h-11 min-w-[44px] items-center justify-center px-2 text-sm font-medium text-foreground transition-colors hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent md:hidden cursor-pointer"
+            className="text-foreground hover:text-accent focus-visible:ring-accent flex h-11 min-w-[44px] cursor-pointer items-center justify-center px-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 md:hidden"
           >
             {mobileMenuOpen ? site.ui.menuClose : site.ui.menuOpen}
           </button>

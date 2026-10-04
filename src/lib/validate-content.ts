@@ -60,7 +60,12 @@ export function assertContentValid(): void {
   );
 
   // 2. Non-empty string checks
-  function assertNonEmpty(val: unknown, fileName: string, entryId: string, fieldName: string) {
+  function assertNonEmpty(
+    val: unknown,
+    fileName: string,
+    entryId: string,
+    fieldName: string
+  ) {
     if (typeof val !== "string" || val.trim().length === 0) {
       throw new Error(
         `[Content Validation Error] File "${fileName}": Entry "${entryId}" has empty or non-string field "${fieldName}".`
@@ -157,7 +162,12 @@ export function assertContentValid(): void {
   // 4. Asset existence under public
   const publicDir = path.join(process.cwd(), "public");
 
-  function assertAssetExists(assetPath: string, fileName: string, entryId: string, fieldName: string) {
+  function assertAssetExists(
+    assetPath: string,
+    fileName: string,
+    entryId: string,
+    fieldName: string
+  ) {
     if (!assetPath.startsWith("/")) {
       throw new Error(
         `[Content Validation Error] File "${fileName}": Entry "${entryId}" field "${fieldName}" path "${assetPath}" must start with "/".`
@@ -173,10 +183,20 @@ export function assertContentValid(): void {
   }
 
   if (profile.avatar) {
-    assertAssetExists(profile.avatar.src, "profile.ts", "profile", "avatar.src");
+    assertAssetExists(
+      profile.avatar.src,
+      "profile.ts",
+      "profile",
+      "avatar.src"
+    );
   }
   if (profile.resume && profile.resume.href.startsWith("/")) {
-    assertAssetExists(profile.resume.href, "profile.ts", "profile", "resume.href");
+    assertAssetExists(
+      profile.resume.href,
+      "profile.ts",
+      "profile",
+      "resume.href"
+    );
   }
   for (const p of projects) {
     if (p.image) {
@@ -214,7 +234,12 @@ export function assertContentValid(): void {
   // 7. profile.email contains exactly one @ and a dot in its domain
   const email = profile.email.trim();
   const atParts = email.split("@");
-  if (atParts.length !== 2 || !atParts[0] || !atParts[1] || !atParts[1].includes(".")) {
+  if (
+    atParts.length !== 2 ||
+    !atParts[0] ||
+    !atParts[1] ||
+    !atParts[1].includes(".")
+  ) {
     throw new Error(
       `[Content Validation Error] File "profile.ts": profile.email "${profile.email}" must contain exactly one "@" and a dot in its domain.`
     );

@@ -22,9 +22,9 @@ export function ThemeToggle() {
         type="button"
         aria-label={site.ui.themeToggle}
         data-theme-toggle
-        className="flex h-11 w-11 items-center justify-center rounded-full p-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        className="focus-visible:ring-accent flex h-11 w-11 items-center justify-center rounded-full p-1.5 focus:outline-none focus-visible:ring-2"
       >
-        <span className="h-8 w-8 rounded-full bg-[#0a2346] dark:bg-[#2a2a2d] dark:border dark:border-[#27272c]" />
+        <span className="h-8 w-8 rounded-full bg-[#0a2346] dark:border dark:border-[#27272c] dark:bg-[#2a2a2d]" />
       </button>
     );
   }
@@ -37,9 +37,9 @@ export function ThemeToggle() {
       aria-label={site.ui.themeToggle}
       data-theme-toggle
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="flex h-11 w-11 items-center justify-center rounded-full p-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
+      className="focus-visible:ring-accent flex h-11 w-11 cursor-pointer items-center justify-center rounded-full p-1.5 focus:outline-none focus-visible:ring-2"
     >
-      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0a2346] text-white transition-colors dark:bg-[#2a2a2d] dark:border dark:border-[#27272c] dark:text-[#8da4c4]">
+      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0a2346] text-white transition-colors dark:border dark:border-[#27272c] dark:bg-[#2a2a2d] dark:text-[#8da4c4]">
         {isDark ? <SunIcon /> : <MoonIcon />}
       </span>
     </button>

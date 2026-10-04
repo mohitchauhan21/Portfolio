@@ -65,12 +65,12 @@ export default function RootLayout({
         className={cn(
           fontSerif.variable,
           fontSans.variable,
-          "min-h-screen bg-background text-foreground font-sans antialiased"
+          "bg-background text-foreground min-h-screen font-sans antialiased"
         )}
       >
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-background focus:text-foreground focus:outline focus:outline-2 focus:outline-accent"
+          className="focus:bg-background focus:text-foreground focus:outline-accent sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:outline focus:outline-2"
         >
           {site.ui.skipToContent}
         </a>
