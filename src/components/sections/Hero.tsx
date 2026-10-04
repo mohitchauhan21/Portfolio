@@ -31,53 +31,57 @@ export function Hero({ id }: SectionProps) {
 
   return (
     <Section id={id} ariaLabelledBy="hero-heading">
-      {/* Top block: avatar + label + name */}
-      <div className="mb-6 flex flex-col sm:mb-8 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
-        {/* Mobile avatar: placed above label on screens < 640px */}
-        {profile.avatar && (
-          <div className="mb-6 sm:hidden">
-            <Avatar image={profile.avatar} size={56} />
-          </div>
-        )}
+      <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
+        {/* Left column (col-span-8 on lg): label, name, intro, links */}
+        <div className="flex flex-col lg:col-span-8">
+          {/* Label */}
+          <p className="text-muted font-sans text-sm leading-5 mb-2">{label}</p>
 
-        <div className="space-y-1">
-          <p className="text-muted font-sans text-sm leading-5">{label}</p>
+          {/* Fluid Name: clamp(40px, 6vw, 96px) */}
           <h1
             id="hero-heading"
-            className="font-serif text-[40px] font-normal leading-[1.05] tracking-[-0.015em] text-foreground md:text-[56px]"
+            className="font-serif font-normal leading-[1.02] tracking-[-0.02em] text-foreground mb-6"
+            style={{ fontSize: "clamp(40px, 6vw, 96px)" }}
           >
             {profile.name}
           </h1>
+
+          {/* Intro paragraph (max 65ch measure) */}
+          <p className="text-foreground mb-8 max-w-[65ch] font-sans text-[16px] leading-[1.65] md:text-[18px]">
+            {profile.intro}
+          </p>
+
+          {/* Hero links row */}
+          {heroLinks.length > 0 && (
+            <div className="flex flex-wrap items-center gap-6 pt-1">
+              {heroLinks.map((link) => (
+                <TextLink
+                  key={link.id}
+                  href={link.href}
+                  newTab={link.external}
+                  className="inline-flex min-h-[44px] items-center py-2 font-sans text-sm text-foreground sm:min-h-0 sm:py-0"
+                >
+                  {link.label}
+                </TextLink>
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* Desktop avatar: top right on screens >= 640px */}
+        {/* Right column / Mobile top avatar (col-span-4 on lg, centered/enlarged to 220px) */}
         {profile.avatar && (
-          <div className="hidden shrink-0 sm:block sm:pt-1">
-            <Avatar image={profile.avatar} size={64} />
+          <div className="mb-8 flex justify-start lg:col-span-4 lg:mb-0 lg:justify-end">
+            {/* Mobile avatar (< 1024px): 64px */}
+            <div className="block lg:hidden">
+              <Avatar image={profile.avatar} size={64} />
+            </div>
+            {/* Desktop enlarged avatar (>= 1024px): ~220px */}
+            <div className="hidden lg:block">
+              <Avatar image={profile.avatar} size={220} />
+            </div>
           </div>
         )}
       </div>
-
-      {/* Intro paragraph */}
-      <p className="text-foreground mb-6 max-w-[680px] font-sans text-[16px] leading-[1.65] md:text-[17px]">
-        {profile.intro}
-      </p>
-
-      {/* Hero links row */}
-      {heroLinks.length > 0 && (
-        <div className="flex flex-wrap items-center gap-6 pt-1">
-          {heroLinks.map((link) => (
-            <TextLink
-              key={link.id}
-              href={link.href}
-              newTab={link.external}
-              className="inline-flex min-h-[44px] items-center py-2 font-sans text-sm text-foreground sm:min-h-0 sm:py-0"
-            >
-              {link.label}
-            </TextLink>
-          ))}
-        </div>
-      )}
     </Section>
   );
 }

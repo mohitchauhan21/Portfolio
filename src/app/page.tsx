@@ -32,7 +32,7 @@ export default function Home() {
       <main
         id="main"
         tabIndex={-1}
-        className="mx-auto max-w-[800px] px-6 sm:px-8"
+        className="w-full"
       >
         {enabledSections.map((sectionConfig) => {
           const SectionComponent = sectionRegistry[sectionConfig.id];

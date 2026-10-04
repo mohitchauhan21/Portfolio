@@ -16,21 +16,29 @@ export function Background({ id, title = "Background" }: SectionProps) {
 
   return (
     <Section id={id}>
-      <SectionHeading id={id}>{title}</SectionHeading>
+      <div className="lg:grid lg:grid-cols-12 lg:gap-12">
+        {/* Left 4 columns: sticky heading */}
+        <div className="lg:col-span-4">
+          <SectionHeading id={id}>{title}</SectionHeading>
+        </div>
 
-      <div className="space-y-10">
-        {visibleGroups.map((group) => (
-          <div key={group.id}>
-            <h3 className="text-muted mb-4 font-sans text-[12px] font-medium tracking-[0.08em] uppercase">
-              {group.label}
-            </h3>
-            <div className="space-y-3.5">
-              {group.entries.map((entry) => (
-                <BackgroundRow key={entry.id} entry={entry} />
-              ))}
-            </div>
+        {/* Right 8 columns: content */}
+        <div className="lg:col-span-8">
+          <div className="space-y-10">
+            {visibleGroups.map((group) => (
+              <div key={group.id}>
+                <h3 className="text-muted mb-4 font-sans text-[12px] font-medium tracking-[0.08em] uppercase">
+                  {group.label}
+                </h3>
+                <div className="space-y-3.5">
+                  {group.entries.map((entry) => (
+                    <BackgroundRow key={entry.id} entry={entry} />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </Section>
   );

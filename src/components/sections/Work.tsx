@@ -9,14 +9,23 @@ export function Work({ id, title = "Selected Work" }: SectionProps) {
 
   return (
     <Section id={id}>
-      <SectionHeading id={id}>{title}</SectionHeading>
-      {visibleProjects.length > 0 && (
-        <div className="flex flex-col">
-          {visibleProjects.map((project) => (
-            <ProjectItem key={project.id} project={project} />
-          ))}
+      <div className="lg:grid lg:grid-cols-12 lg:gap-12">
+        {/* Left 4 columns: sticky heading */}
+        <div className="lg:col-span-4">
+          <SectionHeading id={id}>{title}</SectionHeading>
         </div>
-      )}
+
+        {/* Right 8 columns: content */}
+        <div className="lg:col-span-8">
+          {visibleProjects.length > 0 && (
+            <div className="flex flex-col">
+              {visibleProjects.map((project) => (
+                <ProjectItem key={project.id} project={project} />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
     </Section>
   );
 }

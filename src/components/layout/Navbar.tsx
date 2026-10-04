@@ -46,7 +46,7 @@ export function Navbar() {
           isScrolled ? "border-line border-b" : "border-b border-transparent"
         )}
       >
-        <div className="mx-auto flex h-14 max-w-[800px] items-center justify-between px-6 sm:px-8 md:h-16">
+        <div className="content-container flex h-14 items-center justify-between md:h-16">
           {/* Wordmark */}
           <a
             href="#main"

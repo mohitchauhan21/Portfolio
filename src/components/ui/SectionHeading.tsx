@@ -17,7 +17,7 @@ export function SectionHeading({
       id={`${id}-heading`}
       className={cn(
         "text-foreground font-serif text-[28px] leading-[1.15] font-normal tracking-[-0.01em] md:text-[36px]",
-        "mb-10 md:mb-12",
+        "mb-8 lg:mb-0 lg:sticky lg:top-[calc(4rem+2rem)] lg:self-start",
         className
       )}
     >

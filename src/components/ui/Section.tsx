@@ -24,15 +24,17 @@ export function Section({
       data-section={id}
       aria-labelledby={ariaLabelledBy ?? `${id}-heading`}
       className={cn(
-        "border-line border-b",
-        isHero ? "pt-12 pb-16 md:pt-20 md:pb-24" : "py-16 md:py-24",
+        "border-line w-full border-b",
+        isHero
+          ? "flex min-h-[calc(100svh-3.5rem)] flex-col justify-center py-12 md:min-h-[calc(100svh-4rem)] md:py-16"
+          : "py-16 md:py-24",
         // scroll-margin-top = navbar height + 16px buffer
         "scroll-mt-[calc(3.5rem+1rem)] md:scroll-mt-[calc(4rem+1rem)]",
         className
       )}
       {...props}
     >
-      {children}
+      <div className="content-container">{children}</div>
     </section>
   );
 }
