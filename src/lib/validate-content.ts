@@ -11,6 +11,7 @@ import {
   contact,
   projects,
 } from "@/content";
+import { iconRegistry } from "@/lib/icons";
 
 export function assertContentValid(): void {
   // 1. Uniqueness checks
@@ -110,7 +111,7 @@ export function assertContentValid(): void {
     assertNonEmpty(sg.id, "skills.ts", sg.id, "id");
     assertNonEmpty(sg.label, "skills.ts", sg.id, "label");
     for (const item of sg.items) {
-      assertNonEmpty(item, "skills.ts", sg.id, "items");
+      assertNonEmpty(item.name, "skills.ts", sg.id, "items.name");
     }
   }
 
@@ -258,6 +259,27 @@ export function assertContentValid(): void {
       throw new Error(
         `[Content Validation Error] File "projects.ts": Project "${p.id}" must contain at least one stack item.`
       );
+    }
+  }
+
+  // 10. Every icon key used in skills and project stacks must exist in iconRegistry
+  for (const sg of skillGroups) {
+    for (const item of sg.items) {
+      if (item.icon && !iconRegistry[item.icon]) {
+        throw new Error(
+          `[Content Validation Error] File "skills.ts": Skill "${item.name}" references icon "${item.icon}" which is not registered in "src/lib/icons.ts".`
+        );
+      }
+    }
+  }
+
+  for (const p of projects) {
+    for (const tech of p.stack) {
+      if (tech.icon && !iconRegistry[tech.icon]) {
+        throw new Error(
+          `[Content Validation Error] File "projects.ts": Project "${p.id}" stack item "${tech.name}" references icon "${tech.icon}" which is not registered in "src/lib/icons.ts".`
+        );
+      }
     }
   }
 }

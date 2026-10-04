@@ -49,17 +49,20 @@ Every row from the portfolio configuration model is expanded into numbered steps
 3. To display it in the Hero link row, add `"twitter"` to `profile.heroLinks`.
 4. To display it in the Contact section, open `src/content/contact.ts` and add `"twitter"` to `contact.linkIds`.
 
-### 1.6 Add a Skill or a Skill Group
-1. Open `src/content/skills.ts`.
-2. **To add a skill:** Append the name string into the `items` array of an existing group in `skillGroups`.
-3. **To add a group:** Append a new object to `skillGroups`:
+### 1.6 Add a Skill with an Icon
+1. If using a new brand icon from `react-icons`, open `src/lib/icons.ts` and add it to `iconRegistry` in one line:
    ```ts
-   {
-     id: "cloud-devops",
-     label: "Cloud & DevOps",
-     items: ["AWS", "Docker", "Kubernetes", "CI/CD"],
-   }
+   import { SiDocker } from "react-icons/si";
+   // inside iconRegistry:
+   docker: { component: SiDocker, color: "#2496ed" },
    ```
+2. Open `src/content/skills.ts`.
+3. In `skillGroups`, append the skill item object with its name and icon key:
+   ```ts
+   { name: "Docker", icon: "docker" }
+   ```
+   *(If a brand has no icon, simply omit the `icon` property: `{ name: "Groq" }`).*
+4. Run `npm run build` to verify the content validator checks your new icon.
 
 ### 1.7 Add a Certificate or Achievement
 1. Open `src/content/background.ts`.

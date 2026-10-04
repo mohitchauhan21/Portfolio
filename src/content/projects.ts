@@ -10,12 +10,12 @@ export const projects: Project[] = [
     result:
       "Automated CO₂e calculations across 400+ logs, cutting manual data-processing effort by about 45%.",
     stack: [
-      "React 19",
-      "TypeScript",
-      "Express.js",
-      "MongoDB",
-      "JWT",
-      "Recharts",
+      { name: "React 19", icon: "react" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "Express.js", icon: "express" },
+      { name: "MongoDB", icon: "mongodb" },
+      { name: "JWT", icon: "jwt" },
+      { name: "Recharts", icon: "recharts" },
     ],
     links: [
       {
@@ -38,7 +38,14 @@ export const projects: Project[] = [
     description:
       "AI web app that recommends and explains hands-on science experiments, personalized by grade level and subject.",
     result: "Streams real-time responses from Groq's Llama 3.3 70B.",
-    stack: ["Python", "Flask", "Groq API", "JavaScript", "HTML5", "CSS3"],
+    stack: [
+      { name: "Python", icon: "python" },
+      { name: "Flask", icon: "flask" },
+      { name: "Groq API" }, // Groq has no brand icon, render text only
+      { name: "JavaScript", icon: "javascript" },
+      { name: "HTML5", icon: "html5" },
+      { name: "CSS3", icon: "css3" },
+    ],
     links: [
       {
         label: "GitHub",
@@ -61,12 +68,12 @@ export const projects: Project[] = [
       "Role-based platform connecting patients, caregivers, doctors and admins, with real-time medication alerts and adherence risk scoring.",
     result: "Flags patients below 60% adherence across 3 risk tiers.",
     stack: [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JWT",
-      "Chart.js",
-      "Tailwind CSS",
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Express.js", icon: "express" },
+      { name: "MongoDB", icon: "mongodb" },
+      { name: "JWT", icon: "jwt" },
+      { name: "Chart.js", icon: "chartjs" },
+      { name: "Tailwind CSS", icon: "tailwindcss" },
     ],
     links: [
       {

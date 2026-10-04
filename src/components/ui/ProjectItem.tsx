@@ -1,4 +1,5 @@
 import type { Project } from "@/content";
+import { iconRegistry } from "@/lib/icons";
 import { LinkList } from "./LinkList";
 
 interface ProjectItemProps {
@@ -33,10 +34,25 @@ export function ProjectItem({ project }: ProjectItemProps) {
         )}
 
         {/* Stack */}
-        <p className="text-muted font-sans text-sm leading-5">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm leading-5 text-muted font-sans">
           <span className="sr-only">Tech stack: </span>
-          {project.stack.join(", ")}
-        </p>
+          {project.stack.map((tech) => {
+            const iconObj = tech.icon ? iconRegistry[tech.icon] : null;
+            const IconComp = iconObj?.component;
+            return (
+              <span key={tech.name} className="inline-flex items-center gap-1.5">
+                {IconComp && (
+                  <IconComp
+                    size={16}
+                    aria-hidden="true"
+                    className="shrink-0 text-muted"
+                  />
+                )}
+                <span>{tech.name}</span>
+              </span>
+            );
+          })}
+        </div>
 
         {/* Links */}
         {project.links.length > 0 && (

@@ -63,23 +63,33 @@ export interface Profile {
   resume?: ExternalLink;
 }
 
+export interface TechItem {
+  name: string;
+  icon?: string;
+}
+
 export interface Project {
   id: string; // unique slug, reserved for future detail pages
   title: string;
   dateLabel: string; // displayed as written, for example "2026"
   description: string;
   result?: string; // one-line outcome shown in italics
-  stack: string[];
+  stack: TechItem[];
   links: ExternalLink[]; // rendered in order; empty array renders nothing
   highlights?: string[]; // reserved for future detail pages, not rendered
   image?: ImageAsset; // reserved, not rendered in this version
   hidden?: boolean;
 }
 
+export interface SkillItem {
+  name: string;
+  icon?: string;
+}
+
 export interface SkillGroup {
   id: string;
   label: string;
-  items: string[];
+  items: SkillItem[];
   hidden?: boolean;
 }
 
