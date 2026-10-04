@@ -10,6 +10,7 @@ A fast, accessible, and responsive personal developer portfolio website for Mohi
 - **UI Library:** React 19.2.0 & React DOM 19.2.0
 - **Language:** TypeScript 5.9.3 (strict mode, no implicit any)
 - **Styling:** Tailwind CSS 4.2.2 (vanilla CSS variables via `@theme inline`)
+- **Animations:** `motion/react` 12.x — `LazyMotion` + `domAnimation` bundle, CSS `transition` for hover micro-interactions
 - **Theme Management:** `next-themes` 0.4.6 (light/dark switcher with hydration safety)
 - **Code Formatter:** Prettier 3.6.2 with `prettier-plugin-tailwindcss` 0.7.3
 - **Linter:** ESLint 9.38.0 with Next.js core web vitals and strict zero-warning rule
@@ -89,10 +90,10 @@ mohit-portfolio/
 │   │   ├── robots.ts      # Search engine crawler permissions and sitemap pointer
 │   │   └── sitemap.ts     # XML sitemap generator with current build date
 │   ├── components/        # React components
-│   │   ├── icons/         # Lightweight inline SVG icons (SunIcon, MoonIcon)
+│   │   ├── icons/         # Lightweight inline SVG icons (SunIcon, MoonIcon, and social icons)
 │   │   ├── layout/        # Site-wide layout chrome (Navbar, MobileMenu, ThemeToggle, Footer)
 │   │   ├── sections/      # Individual page section components (Hero, Work, About, Background, Contact)
-│   │   └── ui/            # Reusable UI primitives (Section, SectionHeading, TextLink, Avatar, ProjectItem, BackgroundRow)
+│   │   └── ui/            # Reusable UI primitives (Section, SectionHeading, TextLink, Avatar, ProjectItem, BackgroundRow, MotionWrapper)
 │   ├── content/           # Pure TypeScript structured data layer
 │   │   ├── background.ts  # Education, training, certificates, and achievements
 │   │   ├── contact.ts     # Contact section copy and social link associations
@@ -105,6 +106,7 @@ mohit-portfolio/
 │   ├── hooks/             # Custom React hooks (useScrolled, useScrollSpy, useLockBodyScroll)
 │   └── lib/               # Helper utilities, section registry, and build validators
 │       ├── cn.ts          # Minimal class name joiner
+│       ├── motion.ts      # Centralised animation parameters (durations, distances, easings)
 │       ├── sections.ts    # Section registry mapping section IDs to React components
 │       ├── url.ts         # URL helpers and external link detector
 │       └── validate-content.ts # 9-rule build-time content validation assertion
@@ -128,6 +130,25 @@ All copy, project details, skills, credentials, and social links reside in `src/
 - **Navigation & Section Toggles:** Edit `src/content/site.ts`
 
 For comprehensive recipes, copy-pasteable before-and-after snippets, and error troubleshooting, see **[`docs/CUSTOMIZING.md`](./docs/CUSTOMIZING.md)**.
+
+---
+
+## Animations
+
+All motion parameters (durations, easing curves, distances, stagger values) are centralised in [`src/lib/motion.ts`](./src/lib/motion.ts). Edit them there to adjust the feel site-wide without touching component files.
+
+| Animation | Component | Implementation |
+|---|---|---|
+| Hero entrance (fade + slide up) | `HeroMotion` in `MotionWrapper.tsx` | `motion/react` variants with stagger |
+| Section scroll reveal | `ScrollReveal` in `MotionWrapper.tsx` | `whileInView` with `viewport: { once: true }` |
+| Navbar active indicator | `Navbar.tsx` | CSS `transition` on `translateX` |
+| Link underline hover | `TextLink.tsx` | CSS `transition: width` from `0 → 100%` |
+| Project row hover | `ProjectItem.tsx` | CSS `transition: transform` |
+| Skill chip hover | `About.tsx` | CSS `transition: transform` (lift) |
+| Theme toggle icon swap | `ThemeToggle.tsx` | `motion/react` rotate + opacity |
+| Mobile menu slide-in | `MobileMenu.tsx` | `motion/react` staggered slide |
+
+> All animations respect the user's `prefers-reduced-motion: reduce` system preference — animations are skipped entirely and the static SSR fallback is shown instead.
 
 ---
 
