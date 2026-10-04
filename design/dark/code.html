@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-primary-container": "#233a55",
+          "secondary-fixed-dim": "#cac6bf",
+          "surface-bright": "#39393c",
+          "tertiary-container": "#a3a1a7",
+          "tertiary-fixed": "#e4e1e8",
+          "on-background": "#ece8e1",
+          "on-tertiary": "#303035",
+          "on-secondary": "#31302c",
+          "on-tertiary-container": "#38383d",
+          "surface-tint": "#b1c8ea",
+          "on-secondary-fixed-variant": "#484742",
+          "on-surface": "#ece8e1",
+          "surface-container-lowest": "#0e0e11",
+          "surface-dim": "#131316",
+          "primary-fixed-dim": "#b1c8ea",
+          "surface-container": "#1f1f22",
+          "on-error": "#690005",
+          "secondary-fixed": "#e6e2db",
+          "on-surface-variant": "#c8c5be",
+          "on-error-container": "#ffdad6",
+          "error": "#ffb4ab",
+          "primary-container": "#8da4c4",
+          "primary-fixed": "#d2e4ff",
+          "background": "#131316",
+          "tertiary": "#c8c5cc",
+          "on-secondary-container": "#b8b5ae",
+          "surface-container-low": "#1b1b1e",
+          "on-primary": "#1a324c",
+          "secondary": "#8e8b84",
+          "surface-container-highest": "#27272c",
+          "primary": "#8da4c4",
+          "on-primary-fixed": "#011c36",
+          "error-container": "#93000a",
+          "outline": "#8e9198",
+          "outline-variant": "#43474d",
+          "surface": "#131316",
+          "on-tertiary-fixed-variant": "#47464c",
+          "on-tertiary-fixed": "#1b1b20",
+          "on-secondary-fixed": "#1c1c18",
+          "surface-variant": "#2b2b32",
+          "surface-container-high": "#2a2a2d",
+          "inverse-surface": "#e4e1e6",
+          "tertiary-fixed-dim": "#c8c5cc",
+          "inverse-primary": "#49607d",
+          "inverse-on-surface": "#303033",
+          "on-primary-fixed-variant": "#314864",
+          "secondary-container": "#2a2a2d"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin-desktop": "3rem",
+          "gutter": "1.5rem",
+          "space-md": "1rem",
+          "margin": "1.5rem",
+          "space-2xl": "5rem",
+          "space-xl": "3rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.75rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-md": [ "Newsreader" ],
+          "body-lg": [ "Inter" ],
+          "display": [ "Newsreader" ],
+          "label-md": [ "Inter" ],
+          "caption": [ "Inter" ],
+          "body-md": [ "Inter" ],
+          "headline-lg": [ "Newsreader" ],
+          "headline-sm": [ "Newsreader" ],
+          "display-mobile": [ "Newsreader" ],
+          "headline-lg-mobile": [ "Newsreader" ]
+        },
+        "fontSize": {
+          "headline-md": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" } ],
+          "body-lg": [ "18px", { "lineHeight": "30px", "letterSpacing": "-0.005em", "fontWeight": "400" } ],
+          "display": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" } ],
+          "label-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "500" } ],
+          "caption": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "400" } ],
+          "body-md": [ "15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ],
+          "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" } ],
+          "headline-sm": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.005em", "fontWeight": "500" } ],
+          "display-mobile": [ "38px", { "lineHeight": "46px", "letterSpacing": "-0.015em", "fontWeight": "400" } ],
+          "headline-lg-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" } ]
+        }
+      }
+    }
+  }
+</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-surface-container-high selection:text-primary"><header class="sticky top-0 w-full z-50 bg-surface/95 backdrop-blur-sm border-b border-surface-container-highest"><div class="h-16 max-w-[800px] mx-auto px-margin md:px-margin-desktop flex items-center justify-between"><a class="font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors tracking-tight" data-path="work" href="#">Mohit Chauhan</a><div class="flex items-center gap-space-lg"><nav class="flex items-center gap-space-md" data-active-classes="text-primary border-b border-primary pb-0.5"><a aria-current="page" class="font-label-md transition-colors text-primary border-b border-primary pb-0.5" data-path="work" href="#">Work</a><a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors" data-path="about" href="#">About</a><a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors" data-path="resume" href="#">Resume</a><a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors" data-path="contact" href="#">Contact</a></nav><div class="w-8 h-8 rounded-full bg-surface-container-high border border-surface-container-highest flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="max-w-[800px] mx-auto px-margin md:px-margin-desktop min-h-[calc(100vh-8rem)]"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO -->
+<section class="pt-space-xl pb-space-2xl">
+<div class="flex items-start justify-between gap-space-md mb-space-lg">
+<div class="space-y-space-xs">
+<p class="font-label-md text-label-md text-secondary">Full-Stack Developer, Punjab, India</p>
+<h1 class="font-display text-display text-on-surface tracking-tight">Mohit Chauhan</h1>
+</div>
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 mt-1 bg-surface-container border border-surface-container-highest">
+<img class="w-full h-full object-cover grayscale contrast-125" data-alt="Monochrome minimalist portrait photograph of Mohit Chauhan, high-key natural window lighting, contemplative expression, sharp focus on eyes, clean neutral background in warm off-white and soft grays." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVKSX1180EutIvLFSWtfwyCCAIwIupJeLdM9uvXhvUJZE1lRcEDIV0gqtWH904t5-fVS-19IAaqx_LVgm5gEln9i68HmSvytfoA_RX-9bfy9FwFAHBZCjbdarb3yeRGCzVaifOTazy28Lt1oZo_LKcYQa5kO6kP27kfGLxTJjwQsI-Bqvmw5-FbRZ4cu4K8SZKmTuY1wVJZtdcklDCgNcRvtGDIuMuJe17PZfUsQXyfDMuDnDMf1OH"/>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-space-md max-w-[680px]">
+      I build secure, data-driven web apps with React, Node.js and AI APIs. Currently studying Computer Science and Engineering at Lovely Professional University.
+    </p>
+<div class="flex items-center gap-space-lg pt-space-xs">
+<a class="font-label-md text-label-md text-primary hover:text-on-surface underline underline-offset-4 decoration-surface-container-highest hover:decoration-primary transition-colors" href="https://github.com/mohitchauhan21" rel="noopener noreferrer" target="_blank">GitHub</a>
+<a class="font-label-md text-label-md text-primary hover:text-on-surface underline underline-offset-4 decoration-surface-container-highest hover:decoration-primary transition-colors" href="https://linkedin.com/in/mohit-chauhan21" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="font-label-md text-label-md text-primary hover:text-on-surface underline underline-offset-4 decoration-surface-container-highest hover:decoration-primary transition-colors" href="mailto:mohitchauhan8237@gmail.com">Email</a>
+</div>
+</section>
+<!-- HAIRLINE DIVIDER -->
+<div class="w-full h-[1px] bg-surface-container-highest"></div>
+<!-- SECTION 2: SELECTED WORK -->
+<section class="py-space-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-xl">Selected Work</h2>
+<div class="flex flex-col">
+<!-- Project 1 -->
+<article class="py-space-xl flex flex-col md:flex-row items-start gap-space-md md:gap-space-xl">
+<span class="font-label-md text-label-md text-secondary shrink-0 pt-1 w-16">2026</span>
+<div class="flex-1 space-y-space-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface">
+            EcoTrack — Corporate Carbon Emissions Tracking Platform
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Full-stack platform that helps companies track, analyze and reduce their carbon footprint, with role-based access and real-time dashboards.
+          </p>
+<p class="font-body-md text-body-md text-secondary italic">
+            Automated CO2e calculations across 400+ logs, cutting reporting time by about 65%.
+          </p>
+<p class="font-caption text-caption text-secondary tracking-wide pt-space-xs">
+            React, TypeScript, Express.js, MongoDB, JWT, Recharts
+          </p>
+<div class="flex items-center gap-space-md pt-space-xs">
+<a class="font-label-md text-label-md text-primary underline underline-offset-4 decoration-surface-container-highest hover:decoration-primary transition-colors" href="#">GitHub</a>
+<span class="text-surface-container-highest text-[12px]">/</span>
+<a class="font-label-md text-label-md text-primary underline underline-offset-4 decoration-surface-container-highest hover:decoration-primary transition-colors" href="#">Live</a>
+</div>
+</div>
+</article>
+<div class="w-full h-[1px] bg-surface-container-highest"></div>
+<!-- Project 2 -->
+<article class="py-space-xl flex flex-col md:flex-row items-start gap-space-md md:gap-space-xl">
+<span class="font-label-md text-label-md text-secondary shrink-0 pt-1 w-16">2026</span>
+<div class="flex-1 space-y-space-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface">
+            SciBot — AI Science Experiment Recommender
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            AI web app that recommends and explains hands-on science experiments, personalized by grade level and subject.
+          </p>
+<p class="font-body-md text-body-md text-secondary italic">
+            Streams real-time responses from Groq's Llama 3.3 70B.
+          </p>
+<p class="font-caption text-caption text-secondary tracking-wide pt-space-xs">
+            Python, Flask, Groq API, JavaScript
+          </p>
+<div class="flex items-center gap-space-md pt-space-xs">
+<a class="font-label-md text-label-md text-primary underline underline-offset-4 decoration-surface-container-highest hover:decoration-primary transition-colors" href="#">GitHub</a>
+<span class="text-surface-container-highest text-[12px]">/</span>
+<a class="font-label-md text-label-md text-primary underline underline-offset-4 decoration-surface-container-highest hover:decoration-primary transition-colors" href="#">Live</a>
+</div>
+</div>
+</article>
+<div class="w-full h-[1px] bg-surface-container-highest"></div>
+<!-- Project 3 -->
+<article class="py-space-xl flex flex-col md:flex-row items-start gap-space-md md:gap-space-xl">
+<span class="font-label-md text-label-md text-secondary shrink-0 pt-1 w-16">2026</span>
+<div class="flex-1 space-y-space-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface">
+            MedRemind — Healthcare &amp; Medication Platform
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Role-based platform connecting patients, caregivers, doctors and admins, with real-time medication alerts and adherence risk scoring.
+          </p>
+<p class="font-body-md text-body-md text-secondary italic">
+            Flags patients below 60% adherence across 3 risk tiers.
+          </p>
+<p class="font-caption text-caption text-secondary tracking-wide pt-space-xs">
+            Node.js, Express.js, MongoDB, JWT, Chart.js
+          </p>
+<div class="flex items-center gap-space-md pt-space-xs">
+<a class="font-label-md text-label-md text-primary underline underline-offset-4 decoration-surface-container-highest hover:decoration-primary transition-colors" href="#">GitHub</a>
+<span class="text-surface-container-highest text-[12px]">/</span>
+<a class="font-label-md text-label-md text-primary underline underline-offset-4 decoration-surface-container-highest hover:decoration-primary transition-colors" href="#">Live</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- HAIRLINE DIVIDER -->
+<div class="w-full h-[1px] bg-surface-container-highest"></div>
+<!-- SECTION 3: ABOUT -->
+<section class="py-space-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-xl">About</h2>
+<div class="space-y-space-md max-w-[700px] mb-space-xl">
+<p class="font-body-md text-body-md text-on-surface-variant">
+        I am a Computer Science undergraduate at Lovely Professional University (CGPA 9.01) with a deep interest in turning practical, complex challenges across sustainability, healthcare, and education into resilient full-stack web applications.
+      </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Having solved over 150 algorithmic problems on LeetCode, I combine disciplined data structures and algorithmic thinking with modern AI APIs (OpenAI, Gemini, Groq) to build clean, helpful, and dependable software.
+      </p>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-lg">Skills</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-lg pt-space-xs">
+<div>
+<p class="font-label-md text-label-md text-secondary mb-space-xs">Languages</p>
+<p class="font-body-md text-body-md text-on-surface">Python, Java, JavaScript, SQL, HTML, CSS</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary mb-space-xs">Frameworks &amp; Tools</p>
+<p class="font-body-md text-body-md text-on-surface">React, Next.js, Tailwind CSS, Node.js, Flask, MongoDB, PostgreSQL, Git</p>
+</div>
+</div>
+</div>
+</section>
+<!-- HAIRLINE DIVIDER -->
+<div class="w-full h-[1px] bg-surface-container-highest"></div>
+<!-- SECTION 4: BACKGROUND -->
+<section class="py-space-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-xl">Background</h2>
+<div class="space-y-space-xl">
+<!-- Education -->
+<div>
+<h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-space-md">Education</h3>
+<div class="space-y-space-md">
+<div class="flex flex-col sm:flex-row items-baseline gap-space-xs sm:gap-space-lg">
+<span class="font-caption text-caption text-secondary shrink-0 sm:w-28">2024 – Present</span>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface">Lovely Professional University</p>
+<p class="font-caption text-caption text-secondary">B.Tech Computer Science and Engineering, CGPA 9.01</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-baseline gap-space-xs sm:gap-space-lg">
+<span class="font-caption text-caption text-secondary shrink-0 sm:w-28">2022 – 2023</span>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface">Govt. Senior Secondary Smart School, Sri Muktsar Sahib</p>
+<p class="font-caption text-caption text-secondary">Intermediate, 90.2%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Training -->
+<div>
+<h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-space-md">Training</h3>
+<div class="space-y-space-md">
+<div class="flex flex-col sm:flex-row items-baseline gap-space-xs sm:gap-space-lg">
+<span class="font-caption text-caption text-secondary shrink-0 sm:w-28">Aug 2026</span>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-surface">CipherSchools</p>
+<p class="font-caption text-caption text-secondary">Full-Stack Development</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Certificates -->
+<div>
+<h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-space-md">Certificates</h3>
+<div class="space-y-space-md">
+<div class="flex flex-col sm:flex-row items-baseline gap-space-xs sm:gap-space-lg">
+<span class="font-caption text-caption text-secondary shrink-0 sm:w-28">Apr 2026</span>
+<p class="font-body-md text-body-md text-on-surface flex-1">Oracle Data Platform 2025 Certified Foundations Associate</p>
+</div>
+<div class="flex flex-col sm:flex-row items-baseline gap-space-xs sm:gap-space-lg">
+<span class="font-caption text-caption text-secondary shrink-0 sm:w-28">Mar 2026</span>
+<p class="font-body-md text-body-md text-on-surface flex-1">Intro to SQL, Kaggle</p>
+</div>
+<div class="flex flex-col sm:flex-row items-baseline gap-space-xs sm:gap-space-lg">
+<span class="font-caption text-caption text-secondary shrink-0 sm:w-28">Aug 2025</span>
+<p class="font-body-md text-body-md text-on-surface flex-1">Build Generative AI Apps with No-Code Tools, Infosys</p>
+</div>
+<div class="flex flex-col sm:flex-row items-baseline gap-space-xs sm:gap-space-lg">
+<span class="font-caption text-caption text-secondary shrink-0 sm:w-28">Aug 2025</span>
+<p class="font-body-md text-body-md text-on-surface flex-1">ChatGPT-4 Prompt Engineering: Generative AI &amp; LLM, Infosys</p>
+</div>
+</div>
+</div>
+<!-- Achievements -->
+<div>
+<h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-space-md">Achievements</h3>
+<div class="space-y-space-md">
+<div class="flex flex-col sm:flex-row items-baseline gap-space-xs sm:gap-space-lg">
+<span class="font-caption text-caption text-secondary shrink-0 sm:w-28">Jul 2026</span>
+<p class="font-body-md text-body-md text-on-surface flex-1">Top Performer, Tech Synergy coding contest by Cipher Schools</p>
+</div>
+<div class="flex flex-col sm:flex-row items-baseline gap-space-xs sm:gap-space-lg">
+<span class="font-caption text-caption text-secondary shrink-0 sm:w-28">Aug 2024 – Present</span>
+<p class="font-body-md text-body-md text-on-surface flex-1">150+ DSA problems solved on LeetCode</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HAIRLINE DIVIDER -->
+<div class="w-full h-[1px] bg-surface-container-highest"></div>
+<!-- SECTION 5: GET IN TOUCH -->
+<section class="py-space-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-md">Get in touch</h2>
+<p class="font-body-md text-body-md text-secondary mb-space-lg">Open to internships and collaborations.</p>
+<div class="mb-space-lg">
+<a class="font-headline-md text-headline-md text-on-surface underline underline-offset-8 decoration-surface-container-highest hover:decoration-primary hover:text-primary transition-colors break-all" href="mailto:mohitchauhan8237@gmail.com">
+        mohitchauhan8237@gmail.com
+      </a>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center gap-space-sm sm:gap-space-lg pt-space-xs">
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors" href="https://github.com/mohitchauhan21" rel="noopener noreferrer" target="_blank">
+        GitHub (github.com/mohitchauhan21)
+      </a>
+<span class="hidden sm:inline text-surface-container-highest text-[12px]">·</span>
+<a class="font-label-md text-label-md text-secondary hover:text-on-surface transition-colors" href="https://linkedin.com/in/mohit-chauhan21" rel="noopener noreferrer" target="_blank">
+        LinkedIn (linkedin.com/in/mohit-chauhan21)
+      </a>
+</div>
+</section>
+</div></div></main><footer class="w-full bg-surface border-t border-surface-container-highest mt-space-2xl"><div class="h-16 max-w-[800px] mx-auto px-margin md:px-margin-desktop flex items-center justify-start"><span class="font-caption text-caption text-secondary tracking-wide">© 2026 Mohit Chauhan</span></div></footer></body></html>
